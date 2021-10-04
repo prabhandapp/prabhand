@@ -92,11 +92,6 @@ body {
   font-size: 1.2rem;
 }
 
-/* .login-form .field-wrapper .input-field:focus {
-  border: none;
-  width: 100%;
-} */
-
 input:-webkit-autofill {
   background: transparent;
   border: none;
