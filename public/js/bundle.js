@@ -8843,7 +8843,8 @@ var login = /*#__PURE__*/function () {
       while (1) {
         switch (_context.prev = _context.next) {
           case 0:
-            url = 'http://127.0.0.1:3000/api/v1/users/login';
+            // const url = 'http://127.0.0.1:3000/api/v1/users/login';
+            url = '/api/v1/users/login';
             btn = document.querySelector('.login-form .btn-submit');
             _context.prev = 2;
             btn.value = 'Logging....';
@@ -9208,7 +9209,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "65286" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "64026" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

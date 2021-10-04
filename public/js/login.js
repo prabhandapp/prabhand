@@ -9,7 +9,8 @@ const renderLoginInput = (el) => {
 };
 
 const login = async (username, password) => {
-  const url = 'http://127.0.0.1:3000/api/v1/users/login';
+  // const url = 'http://127.0.0.1:3000/api/v1/users/login';
+  const url = '/api/v1/users/login';
   const btn = document.querySelector('.login-form .btn-submit');
   try {
     btn.value = 'Logging....';
