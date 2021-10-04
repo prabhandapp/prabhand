@@ -25,8 +25,8 @@ const app = require('./app');
 app.get('/', (req, res) => {
   res.send('Hello World Vickey');
 });
-
-const server = app.listen(3000, (err) => {
+const port = process.env.PORT || 3000;
+const server = app.listen(port, (err) => {
   if (err) console.log('Error while listening');
   console.log('Listening to port');
 });
