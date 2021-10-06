@@ -61,7 +61,6 @@ exports.signup = catchAsync(async (req, res, next) => {
 });
 
 exports.isLoggedIn = catchAsync(async (req, res, next) => {
-  console.log(req.cookies);
   if (req.cookies.jwt) {
     const decode = jwt.verify(req.cookies.jwt, process.env.JWT_SECRET);
     const user = await User.findById(decode.id);
@@ -74,5 +73,28 @@ exports.isLoggedIn = catchAsync(async (req, res, next) => {
     return next(new AppError('You are not Logged in. Please Log in', 401));
   }
 
+  next();
+});
+
+exports.protected = catchAsync(async (req, res, next) => {
+  let token;
+  if (
+    req.headers.authorization &&
+    req.headers.authorization.startsWith('Bearer')
+  ) {
+    token = req.headers.authorization.split(' ')[1];
+  } else if (req.cookies.jwt) {
+    token = req.cookies.jwt;
+  }
+
+  if (!token) {
+    next(new AppError('You are not logged in', 401));
+  }
+
+  const decode = jwt.verify(token, process.env.JWT_SECRET);
+  const user = await User.findById(decode.id);
+  if (!user) {
+    next(new AppError('Invalid Token or User does not exists', 401));
+  }
   next();
 });

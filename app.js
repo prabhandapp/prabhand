@@ -5,6 +5,7 @@ const cookieParser = require('cookie-parser');
 
 const userRoute = require('./routes/userRoutes');
 const viewRoute = require('./routes/viewRoutes');
+const menuRoute = require('./routes/menuRoutes');
 const AppError = require('./utils/appError');
 const globalError = require('./controllers/errorController');
 
@@ -22,7 +23,9 @@ app.set('view engine', 'pug');
 app.set('views', path.join(__dirname, 'views'));
 app.use(express.static(`${__dirname}/public`));
 
+//API Routing
 app.use('/api/v1/users', userRoute);
+app.use('/api/v1/menu', menuRoute);
 //View Routing
 app.use('/', viewRoute);
 app.all('*', (req, res, next) => {

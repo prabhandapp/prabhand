@@ -1,0 +1,36 @@
+extends base
+
+block header 
+    include _header
+
+block content 
+    #loader.loader-hide
+    .update-menu-wrapper
+        .um-selection
+            select#um-select(name='um-select')
+                option(value='category') -Select Category-
+                option(value='biryani') Biryani
+                option(value='chinese') Chinese
+                option(value='curry') Curry
+                option(value='dal') Dal
+                option(value='roti') Roti
+                option(value='rice') Rice
+                option(value='sabzi') Sabzi
+                option(value='starter') Starter
+                option(value='sides') Sides
+
+        .new-menu-add-wrapper
+            a#um-menu-add(href='#')
+                i.fa.fa-plus-circle.fa-2x(aria-hidden='true')
+
+        #um-modal-wrapper.um-modal-wrapper.um-modal-hide
+            .um-modal-form
+                h1 Please fill the menu data
+                input#modal-item-name.modal-input(type='text' name='modal-item-name' placeholder='Enter Item Name')
+                input#modal-item-price.modal-input(type='number' name='modal-item-price' placeholder='Enter Item Price')
+                input#modal-item-qty.modal-input(type='number' name='modal-item-qty' placeholder='Enter Item Quantity')
+                .um-modal-cta
+                    a.btn-modal.btn-modal--save(href='#') Save
+                    a.btn-modal.btn-modal--cancel(href='#') Close
+        .um-menus
+            

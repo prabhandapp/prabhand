@@ -10,4 +10,9 @@ const showAlert = (msg, type) => {
   window.setTimeout(hideAlert, 5000);
 };
 
-export { showAlert };
+const loaderDisplay = () => {
+  const loader = document.getElementById('loader');
+  loader.classList.toggle('loader-hide');
+};
+
+export { showAlert, loaderDisplay };

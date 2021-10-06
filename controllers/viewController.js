@@ -9,3 +9,9 @@ exports.home = (req, res, next) => {
     title: 'Home',
   });
 };
+
+exports.menu = (req, res, next) => {
+  res.status(200).render('menu', {
+    title: 'Menu Update',
+  });
+};

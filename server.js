@@ -13,6 +13,8 @@ const dbConnect = async function () {
   try {
     await mongoose.connect(dbString);
     console.log('DB Connected');
+
+    console.log('Listening to port');
   } catch (err) {
     console.error(err);
   }
@@ -28,5 +30,4 @@ app.get('/', (req, res) => {
 const port = process.env.PORT || 3000;
 const server = app.listen(port, (err) => {
   if (err) console.log('Error while listening');
-  console.log('Listening to port');
 });

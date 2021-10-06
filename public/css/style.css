@@ -247,6 +247,133 @@ header {
   border-radius: 50%;
 }
 
+/* Update Menu */
+
+.update-menu-wrapper {
+  width: 90%;
+  margin: auto;
+}
+
+.um-selection {
+  margin-top: 2rem;
+}
+
+.new-menu-add-wrapper {
+  margin: 1rem 0;
+  display: flex;
+  align-items: center;
+}
+
+.new-menu-add-wrapper a {
+  text-decoration: none;
+  color: #fff;
+}
+
+.um-selection select {
+  background-color: #1d324b73;
+  width: 100%;
+  font-size: 1.6rem;
+  padding: 1rem 0;
+  outline: none;
+  border-radius: 10px;
+  color: #fff;
+}
+.um-menus {
+  margin-top: 2rem;
+}
+
+.um-menus .items {
+  display: grid;
+  grid-template-columns: 5fr 1fr 1fr 0.5fr 0.5fr;
+  grid-gap: 1rem;
+  background-color: #1d324b73;
+  outline: none;
+  padding: 2rem 1rem;
+  border-radius: 10px;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+.um-item-input {
+  background-color: #a75656b2 !important;
+}
+
+.um-menus .items input {
+  width: 100%;
+  padding: 0.5rem 0;
+  font-size: 1.6rem;
+  background-color: transparent;
+  border: 1px solid #fff;
+  color: #fff;
+  outline: none;
+}
+
+.um-menus .items i {
+  color: #fff;
+}
+
+.um-modal-wrapper {
+  background-color: rgba(245, 211, 101, 65%);
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
+.um-modal-form {
+  background-color: #091524b2;
+  color: #fff;
+  width: 90%;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 4px 36px 2px rgba(0, 0, 0, 50%);
+}
+
+.um-modal-form h1 {
+  margin-bottom: 2rem;
+}
+
+.um-modal-cta {
+  margin: 2rem 0 1rem 0;
+  display: flex;
+  justify-content: space-between;
+}
+.um-modal-form .modal-input {
+  padding: 1rem 0.5rem;
+  margin-bottom: 1rem;
+  border-radius: 0.5rem;
+  font-size: 1.6rem;
+}
+
+.um-modal-form .btn-modal {
+  text-decoration: none;
+  background-color: #20bf6b;
+  padding: 0.8rem 1rem;
+  border-radius: 0.8rem;
+  outline: none;
+  color: #fff;
+  font-size: 1.6rem;
+}
+
+.um-modal-form .btn-modal--save {
+  background-color: #20bf6b;
+}
+
+.um-modal-form .btn-modal--cancel {
+  background-color: #eb4d4b;
+}
+
+.um-modal-hide {
+  display: none;
+}
+
 /* ERROR PAGE */
 .error-wrapper {
   margin-top: 2rem;
@@ -292,4 +419,16 @@ header {
 }
 .alert--error {
   background-color: #eb4d4b;
+}
+
+/* LOADER */
+#loader {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  background: url('/../img/loader.gif') no-repeat center center;
+}
+
+.loader-hide {
+  display: none;
 }
