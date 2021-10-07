@@ -15,3 +15,9 @@ exports.menu = (req, res, next) => {
     title: 'Menu Update',
   });
 };
+
+exports.print = (req, res, next) => {
+  res.status(200).render('print', {
+    title: 'Menu Print',
+  });
+};

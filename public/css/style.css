@@ -374,7 +374,98 @@ header {
   display: none;
 }
 
-/* ERROR PAGE */
+/****************************** Print Menu *********************************************/
+.pm-menu-container {
+  background: url('/../img/prb_menu_back.jpg') no-repeat center center;
+}
+.print-menu-action {
+  width: 90%;
+  margin: 1rem auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.pm-selection {
+  width: 80%;
+}
+.pm-selection select {
+  background-color: #1d324b73;
+  width: 100%;
+  font-size: 1.6rem;
+  padding: 1rem 0.5rem;
+  outline: none;
+  border-radius: 10px;
+  color: #fff;
+}
+
+.pm-btn-print {
+  color: rgb(43, 41, 41);
+}
+
+.pm-seperator {
+  width: 100%;
+  height: 2px;
+  background-color: #1d324b73;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+}
+
+.pm-head-img {
+  max-width: 100%;
+}
+
+.pm-menu-items {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 1rem;
+  font-weight: 600;
+  font-family: 'Raleway', sans-serif;
+  font-size: 1rem;
+}
+
+.pm-menu-items h1 {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+  font-size: 1.6rem;
+  text-transform: uppercase;
+}
+
+.pm-menu-item-left,
+.pm-menu-item-right {
+  width: 50%;
+}
+
+.pm-menu-item-2 {
+  margin-top: 1.5rem;
+}
+
+.pm-menu-info {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  margin-bottom: 0.6rem;
+}
+
+.pm-vertical-seperator {
+  width: 3px;
+  height: 60vh;
+  background-color: #000;
+  margin: 1rem;
+  margin-bottom: 4rem;
+}
+
+@media only screen and (min-width: 768px) {
+  .pm-menu-container {
+    width: 50vw;
+    margin: auto;
+  }
+
+  .pm-menu-items {
+    font-size: 1.4rem;
+  }
+}
+
+/************************************ ERROR PAGE ********************************/
 .error-wrapper {
   margin-top: 2rem;
   color: #eb4d4b;

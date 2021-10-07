@@ -1,0 +1,29 @@
+extends base
+
+block header 
+    include _header
+
+block content 
+    #loader.loader-hide
+    .print-menu-action
+        .pm-selection
+            select#pm-select(name='pm-select')
+                option(value='select') -Select Menu List-
+                option(value='sabzi,roti,curry') Sabzi+Roti+Curry
+                option(value='rice,dal,biryani') Rice+Dal+Biryani
+                option(value='chinese,sides,starter') Chinese+Sides+Starter
+        .pm-print-action
+            a.pm-btn-print
+                i.fa.fa-print.fa-3x(aria-hidden='true')
+    .pm-seperator
+    #download-menu.pm-menu-container
+        img.pm-head-img(src='/img/prb_menu.jpg' alt='header_image')
+        .pm-menu-items
+            .pm-menu-item-left
+                .pm-menu-item-1
+
+                .pm-menu-item-2
+
+            .pm-vertical-seperator
+            .pm-menu-item-right
+                .pm-menu-item-3

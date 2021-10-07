@@ -7,6 +7,8 @@ import {
   addMenu,
 } from './updateMenu';
 
+import { renderMenu, printMenu } from './printMenu';
+
 // Login Interface
 const usernameInput = document.getElementById('username');
 const passwordInput = document.getElementById('password');
@@ -36,9 +38,11 @@ if (loginForm) {
 
 //Open Add Menu
 const updateAddBtn = document.getElementById('um-menu-add');
-updateAddBtn.addEventListener('click', function (e) {
-  updateMenuModalDisplay();
-});
+if (updateAddBtn) {
+  updateAddBtn.addEventListener('click', function (e) {
+    updateMenuModalDisplay();
+  });
+}
 
 //Close Menu Modal
 const updateModalClose = document.querySelector(
@@ -81,5 +85,25 @@ if (updateMenuContainer) {
     if (!parentElem.classList.contains('um-item-input')) {
       parentElem.classList.add('um-item-input');
     }
+  });
+}
+
+//****************************************************************** */
+//Menu Print Interface
+//****************************************************************** */
+
+const printCategorySelection = document.getElementById('pm-select');
+if (printCategorySelection) {
+  printCategorySelection.addEventListener('change', function (e) {
+    e.preventDefault();
+    renderMenu(printCategorySelection.value);
+  });
+}
+
+const btnPrint = document.querySelector('.pm-btn-print');
+if (btnPrint) {
+  btnPrint.addEventListener('click', function (e) {
+    e.preventDefault();
+    printMenu();
   });
 }
