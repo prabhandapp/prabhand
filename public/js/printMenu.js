@@ -53,13 +53,25 @@ const printMenu = () => {
   const printCategorySelection = document.getElementById('pm-select').value;
   const name = printCategorySelection.replaceAll(',', '-');
   const downlaodNode = document.getElementById('download-menu');
-  domtoimage.toPng(downlaodNode, { options }).then(function (dataUrl) {
-    var link = document.createElement('a');
-    link.download = `${name}.png`;
-    link.href = dataUrl;
-    link.click();
-    loaderDisplay();
-  });
+  let format = document.getElementById('pm-select-format').value;
+  format = format === 'default' ? 'png' : format;
+  if (format === 'svg') {
+    domtoimage.toSvg(downlaodNode, { options }).then(function (dataUrl) {
+      var link = document.createElement('a');
+      link.download = `${name}.svg`;
+      link.href = dataUrl;
+      link.click();
+      loaderDisplay();
+    });
+  } else {
+    domtoimage.toPng(downlaodNode, { options }).then(function (dataUrl) {
+      var link = document.createElement('a');
+      link.download = `${name}.png`;
+      link.href = dataUrl;
+      link.click();
+      loaderDisplay();
+    });
+  }
 };
 
 export { renderMenu, printMenu };

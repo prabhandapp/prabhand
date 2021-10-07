@@ -12,6 +12,10 @@ block content
                 option(value='sabzi,roti,curry') Sabzi+Roti+Curry
                 option(value='rice,dal,biryani') Rice+Dal+Biryani
                 option(value='chinese,sides,starter') Chinese+Sides+Starter
+            select#pm-select-format(name='pm-select-format')
+                option(value='default') -Format-
+                option(value='png') PNG
+                option(value='svg') SVG
         .pm-print-action
             a.pm-btn-print
                 i.fa.fa-print.fa-3x(aria-hidden='true')

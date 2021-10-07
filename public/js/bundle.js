@@ -10158,16 +10158,30 @@ var printMenu = function printMenu() {
   var printCategorySelection = document.getElementById('pm-select').value;
   var name = printCategorySelection.replaceAll(',', '-');
   var downlaodNode = document.getElementById('download-menu');
+  var format = document.getElementById('pm-select-format').value;
+  format = format === 'default' ? 'png' : format;
 
-  _domToImage.default.toPng(downlaodNode, {
-    options: options
-  }).then(function (dataUrl) {
-    var link = document.createElement('a');
-    link.download = "".concat(name, ".png");
-    link.href = dataUrl;
-    link.click();
-    (0, _util.loaderDisplay)();
-  });
+  if (format === 'svg') {
+    _domToImage.default.toSvg(downlaodNode, {
+      options: options
+    }).then(function (dataUrl) {
+      var link = document.createElement('a');
+      link.download = "".concat(name, ".svg");
+      link.href = dataUrl;
+      link.click();
+      (0, _util.loaderDisplay)();
+    });
+  } else {
+    _domToImage.default.toPng(downlaodNode, {
+      options: options
+    }).then(function (dataUrl) {
+      var link = document.createElement('a');
+      link.download = "".concat(name, ".png");
+      link.href = dataUrl;
+      link.click();
+      (0, _util.loaderDisplay)();
+    });
+  }
 };
 
 exports.printMenu = printMenu;
@@ -10572,7 +10586,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "61250" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "53615" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
