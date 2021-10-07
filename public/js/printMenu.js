@@ -44,16 +44,22 @@ const renderMenu = async (categoryList) => {
 
 const printMenu = () => {
   loaderDisplay();
+  var options = {
+    quality: 2,
+    width: 2000,
+    height: 2000,
+  };
+
   const printCategorySelection = document.getElementById('pm-select').value;
   const name = printCategorySelection.replaceAll(',', '-');
   const downlaodNode = document.getElementById('download-menu');
-  domtoimage.toSvg(downlaodNode, { quality: 1 }).then(function (dataUrl) {
+  domtoimage.toPng(downlaodNode, { options }).then(function (dataUrl) {
     var link = document.createElement('a');
-    link.download = `${name}.svg`;
+    link.download = `${name}.png`;
     link.href = dataUrl;
     link.click();
+    loaderDisplay();
   });
-  loaderDisplay();
 };
 
 export { renderMenu, printMenu };

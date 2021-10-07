@@ -10150,20 +10150,24 @@ exports.renderMenu = renderMenu;
 
 var printMenu = function printMenu() {
   (0, _util.loaderDisplay)();
+  var options = {
+    quality: 2,
+    width: 2000,
+    height: 2000
+  };
   var printCategorySelection = document.getElementById('pm-select').value;
   var name = printCategorySelection.replaceAll(',', '-');
   var downlaodNode = document.getElementById('download-menu');
 
-  _domToImage.default.toSvg(downlaodNode, {
-    quality: 1
+  _domToImage.default.toPng(downlaodNode, {
+    options: options
   }).then(function (dataUrl) {
     var link = document.createElement('a');
-    link.download = "".concat(name, ".svg");
+    link.download = "".concat(name, ".png");
     link.href = dataUrl;
     link.click();
+    (0, _util.loaderDisplay)();
   });
-
-  (0, _util.loaderDisplay)();
 };
 
 exports.printMenu = printMenu;
