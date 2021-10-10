@@ -21,3 +21,9 @@ exports.print = (req, res, next) => {
     title: 'Menu Print',
   });
 };
+
+exports.bill = (req, res, next) => {
+  res.status(200).render('bill', {
+    title: 'Menu Bill',
+  });
+};

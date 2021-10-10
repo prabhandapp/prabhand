@@ -1,0 +1,81 @@
+extends base
+
+block header 
+    include _header
+
+block content 
+    #loader.loader-hide
+    .bill-container
+        .bill-cta
+            .bill-menu-category
+                select#bill-category.bill-category
+                    option(value='category') SELECT-CATEGORY
+                    option(value='starter') STARTER
+                    option(value='sabzi') SABZI
+                    option(value='chinese') CHINESE
+                    option(value='roti') ROTI
+                    option(value='dal') DAL
+                    option(value='curry') CURRY
+                    option(value='rice') RICE
+                    option(value='biryani') BIRYANI
+
+            .bill-selection-info
+                h2 Details
+                .bill-selection-info__result
+                    p
+                        | Selected Items : 
+                        span.bill-selection-count 0
+                    p
+                        | Selected Price : 
+                        span.bill-selection-price 0
+                a.review-cta(href='#') Review
+
+            .break
+
+            .bill-menu-items
+                
+                    
+
+    .bill-review-container.hidden
+        .bill-container
+            .bill-navigation
+                a.review-prev(href='#') Previous
+                a.review-next(href='#') Next
+            .bill-seperator
+            .bill-compliment-items
+                .bill-compliment-item
+                    input(type='checkbox' name='' id='' value='Salad' data-id=700)
+                    |  Salad
+                .bill-compliment-item
+                    input(type='checkbox' name='' id='' value='Papad'   data-id=800)
+                    |  Papad
+                .bill-compliment-item
+                    input(type='checkbox' name='' id='' value='Raita'   data-id=900)
+                    |  Raita
+
+            .bill-seperator
+            .bill-review-price-items
+                .bill-review-price-item
+                    p Chicken Curry [240]
+                    p 10 Pieces
+                    .bill-review-price
+                        span Rs
+                        input(type='number' name='' id='' value='340')
+
+            .bill-review-total
+                p Total
+                p.reviewAmount 870
+
+    .bill-receipt-container.hidden
+        .bill-container
+            .bill-receipt-navigation
+                a.receipt-prev(href='#') Previous
+            .bill-seperator
+            .bill-company-title Prabhand
+            .bill-final-receipts
+                .bill-final-receipt
+                    p Chicken Curry
+                    p Rs 400
+            .bill-final-receipt--total
+                p Total
+                p.bill-final-total Rs450

@@ -8,5 +8,6 @@ router.get('/login', viewController.getLoginForm);
 router.get('/home', authController.isLoggedIn, viewController.home);
 router.get('/menu', authController.isLoggedIn, viewController.menu);
 router.get('/print', authController.isLoggedIn, viewController.print);
+router.get('/bill', authController.isLoggedIn, viewController.bill);
 
 module.exports = router;

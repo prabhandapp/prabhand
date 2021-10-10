@@ -479,6 +479,270 @@ header {
   }
 }
 
+/* ********************************BILL PAGE CSS ******************************* */
+
+/* Second Page */
+
+.bill-container {
+  width: 90%;
+  margin: auto;
+}
+
+.bill-menu-category {
+  margin-top: 1.5rem;
+}
+
+.bill-category {
+  display: block;
+  width: 100%;
+  padding: 1rem;
+  background-color: #1d324b73;
+  color: #fff;
+  border: none;
+  font-size: 1.6rem;
+  border-radius: 10px;
+}
+
+.bill-selection-info {
+  background-color: #1d324b73;
+  color: #fff;
+  padding: 1rem;
+  margin: 1.5rem 0;
+  width: 100%;
+  border-radius: 10px;
+}
+
+.bill-selection-info__result {
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.2rem;
+  margin-bottom: 0.8rem;
+}
+
+.review-cta,
+.review-prev,
+.review-next,
+.receipt-prev {
+  text-align: center;
+  display: block;
+  width: 20%;
+  padding: 0.5rem 1rem;
+  background-color: #fabc2a;
+  text-decoration: none;
+
+  font-weight: 700;
+  border-radius: 1rem;
+  color: #000;
+}
+
+.bill-menu-items {
+  margin-top: 2rem;
+  width: 100%;
+}
+
+.bill-menu-item__wrapper {
+  color: #fff;
+  background-color: #1d324b73;
+  padding: 1rem;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+.menu-item__qty {
+  padding-left: 1rem;
+}
+
+.bill-menu-item {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-columns: 1fr 2fr 1fr 1fr 2fr 2fr;
+  /* color: var(--lighgray); */
+  font-size: 1.2rem;
+}
+
+.bill-menu-item input[type='number'] {
+  width: 80%;
+}
+
+/* .menu-item__info {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.menu-item__result {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.menu-item__wrapper--select {
+  background-color: #09814a;
+}
+
+.menu-item--select {
+  color: var(--lighgray);
+} */
+
+/* REVIEW PAGE */
+.bill-seperator {
+  width: 100%;
+  margin: 1rem auto;
+  height: 1px;
+  background-color: #fff;
+}
+
+.bill-review-container {
+  background-color: #1d324bbd;
+  min-height: 100vh;
+  color: #fff;
+}
+
+.bill-navigation {
+  padding-top: 2rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.bill-compliment-items {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 1.5rem;
+  color: #fff;
+  margin: 1.5rem 0;
+}
+
+.bill-compliment-item {
+  display: flex;
+  align-items: center;
+}
+
+.bill-review-price-items {
+  margin-top: 1.5rem;
+  font-size: 1.2rem;
+}
+
+.bill-review-price-item {
+  display: grid;
+  grid-template-columns: 2.5fr 1fr 2fr;
+  grid-gap: 1rem;
+  margin-top: 1.5rem;
+  align-items: center;
+}
+
+.bill-review-price input {
+  background-color: transparent;
+  color: #fff;
+  border: 1px solid #fff;
+  border-radius: 5px;
+  padding: 0.5rem 1rem;
+  outline: none;
+  width: 80%;
+}
+
+.bill-review-total {
+  border-top: 1px solid var(--primary);
+  margin-top: 2rem;
+  font-size: 1.4rem;
+  color: #fff;
+  font-weight: 700;
+  display: flex;
+  justify-content: space-between;
+}
+
+.review-error {
+  color: #eb4d4b;
+}
+
+/* Last Page */
+
+.bill-receipt-navigation {
+  padding: 1rem 0;
+}
+
+.bill-company-title {
+  text-transform: uppercase;
+  font-size: 2.4rem;
+  text-align: center;
+  margin: 2rem 0;
+  color: #fabc2a;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.bill-company-title::after {
+  display: block;
+  content: '';
+  width: 3rem;
+  height: 0.3rem;
+  background-color: #fff;
+  margin: 1rem;
+}
+
+.bill-company-title::before {
+  display: block;
+  content: '';
+  width: 3rem;
+  height: 0.3rem;
+  background-color: #fff;
+  margin: 1rem;
+}
+
+.bill-receipt-container {
+  background-color: var(--darkGray);
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.555), rgba(0, 0, 0, 0.55)),
+    url('/img/bill-back.jpg') no-repeat center center;
+  background-size: cover;
+  min-height: 100vh;
+}
+
+.bill-final-receipt {
+  display: grid;
+  grid-template-columns: 250px 1fr;
+  grid-gap: 1.5rem;
+  color: #fabc2a;
+  margin: 1.5rem 0;
+  font-size: 1.4rem;
+}
+
+.bill-final-receipt--total {
+  border-top: 1px solid #fabc2a;
+  display: grid;
+  grid-template-columns: 250px 1fr;
+  grid-gap: 1.5rem;
+  color: #fabc2a;
+  margin: 1.5rem 0;
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.menu-checked {
+  background-color: #20bf6b;
+}
+
+.comp::after {
+  content: 'C';
+  font-size: 1rem;
+  background-color: #09814a;
+  width: 2rem;
+  height: 2rem;
+  padding: 0.3rem 0.5rem;
+  border-radius: 50%;
+}
+
+@media only screen and (min-width: 768px) {
+  .bill-cta,
+  .bill-review-container,
+  .bill-receipt-container {
+    width: 50%;
+    margin: auto;
+  }
+}
+
 /************************************ ERROR PAGE ********************************/
 .error-wrapper {
   margin-top: 2rem;

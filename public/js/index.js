@@ -8,6 +8,7 @@ import {
 } from './updateMenu';
 
 import { renderMenu, printMenu } from './printMenu';
+import { billInit } from './billMenu';
 
 // Login Interface
 const usernameInput = document.getElementById('username');
@@ -106,4 +107,13 @@ if (btnPrint) {
     e.preventDefault();
     printMenu();
   });
+}
+
+//****************************************************************** */
+//BILL MENU INTERFACE
+//****************************************************************** */
+
+const bill = document.querySelector('.bill-cta');
+if (bill) {
+  billInit();
 }
