@@ -24,8 +24,9 @@ exports.login = catchAsync(async (req, res, next) => {
     return next(new AppError('Please provide username and password'));
   }
 
+  const uName = username.toLowerCase();
   //Find Username in DB
-  const user = await User.findOne({ username }).select('password');
+  const user = await User.findOne({ username: uName }).select('password');
 
   //Verify Username and password
   if (!user || !(await user.fun(password, user.password))) {
