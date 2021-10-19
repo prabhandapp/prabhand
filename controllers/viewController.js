@@ -1,3 +1,6 @@
+const Expense = require('../models/expenseModel');
+const catchAsync = require('../utils/catchAsync');
+
 exports.getLoginForm = (req, res, next) => {
   res.status(200).render('login', {
     title: 'Login',
@@ -25,5 +28,17 @@ exports.print = (req, res, next) => {
 exports.bill = (req, res, next) => {
   res.status(200).render('bill', {
     title: 'Menu Bill',
+  });
+};
+
+exports.expense = (req, res, next) => {
+  res.status(200).render('expense', {
+    title: 'Expense',
+  });
+};
+
+exports.expenseItem = (req, res, next) => {
+  res.status(200).render('expense_item', {
+    title: 'Expense Item',
   });
 };

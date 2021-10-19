@@ -44,7 +44,6 @@ exports.addMenu = catchAsync(async (req, res, next) => {
 
 exports.deleteMenu = catchAsync(async (req, res, next) => {
   const menu = await Menu.findByIdAndDelete(req.params.id);
-  console.log(menu);
   res.status(204).json({
     success: 'success',
     data: null,

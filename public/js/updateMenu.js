@@ -1,6 +1,6 @@
 import axios from 'axios';
 import { getMenuByCategory } from './menuUtility';
-import { loaderDisplay } from './util';
+import { showAlert, loaderDisplay } from './util';
 
 const clearInput = (elem) => {
   elem.value = '';

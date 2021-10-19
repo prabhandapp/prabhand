@@ -1,0 +1,46 @@
+extends base
+
+block header 
+    include _header
+
+block content
+        #loader.loader-hide
+        .expense-item-wrapper
+            .expense-item-container
+                .expense-redirect
+                    a.btn-redirect(href='/expense') Back
+                .expense-info
+                    p.item-info-name 
+                    p.item-info-desc
+                    p.item-total-expense
+                .expense-seperator
+                .expense-item-cta
+                    a.expense-cta-edit(href='') Edit Detail
+                    a.expense-cta-add(href='') Add Items
+                .expense-seperator
+                .expense-items
+                    //- .expense-item
+                    //-     p Chicken Daere
+                    //-     p 34000
+                    //-     i.fas.fa-trash-alt.fa-3x.item-delete
+                .expense-item-modal.edit-item-modal.hidden
+                    .expense-item-modal-content
+                        form.edit-detail-form
+                            h1.item-header Edit The Order Details
+                            input#expense-detail--name.expense-detail--input(type='text' name='expense-detail--name' value='1st Order' maxlength='25')
+                            textarea#expense-detail--desc.expense-detail--input(name='expense-detail--desc' cols='30' rows='4')
+                                | Kokar Parish
+                            input#expense-detail--income.expense-detail--input(type='number' name='expense-detail--income' value='34545')
+                            input#expense-detail--date.expense-detail--input(type='date' name='expense-detail--date' value='2021-11-21')
+                            .expense-item-modal-cta
+                                a.btn-modal-item-close.edit-detail-close(href='#') Close
+                                input.btn-modal-item-save.edit-detail-save(type='submit' value='Save')
+                .expense-item-modal.add-item-modal.hidden
+                    .expense-item-modal-content
+                        form.add-item-form
+                            h1.item-header Please Add The Item Details
+                            input#item-name.expense-detail--input(type='text' name='item-name' maxlength='25' placeholder='Enter Expense Item Name')
+                            input#item-price.expense-detail--input(type='number' name='item-price' maxlength='25' placeholder='Enter Expense Item Price')
+                            .expense-item-modal-cta
+                                a.btn-modal-item-close.add-item-close(href='#') Close
+                                input.btn-modal-item-save.add-item-save(type='submit' value='Save')

@@ -1,0 +1,50 @@
+extends base
+
+block header 
+    include _header
+
+block content 
+    #loader.loader-hide
+    .expense-wrapper
+        .expense-container
+            .expense-summary
+                .expense-summary--income
+                    p.expense-summary--title Income
+                    p.expense-summary--value=stats.totalIncome
+                .expense-summary--expense
+                    p.expense-summary--title Expense
+                    p.expense-summary--value=stats.totalExpense
+                .expense-summary--balance
+                    p.expense-summary--title Balance
+                    p.expense-summary--value=stats.totalBalance
+        .expense-seperator
+        .expense-cta
+            a.expense-cta-btn(href='') Add Expense
+        .expense-seperator
+        .expenses-wrapper
+            .expense-container
+                .expenses
+
+                    each expense in expenses
+                        .expense(data-id=`${expense._id}`)
+                            .expense-stamp(data-id=`${expense._id}`)
+                                .expense-month=expense.month
+                                .expense-date=expense.day
+                            .expense-info(data-id=`${expense._id}`)
+                                h1=expense.name
+                                .expense-stats(data-id=`${expense._id}`)
+                                    p.expense-stats--income=`+${expense.income}`
+                                    p.expense-stats--expense=`-${expense.expense}`
+                                    p.expense-stats--balance=expense.balance
+                            .expense-delete
+                                i.fas.fa-trash-alt.fa-3x.expense-delete-icon(data-id=`${expense._id}`)
+        #expense-modal-wrapper.expense-modal-wrapper.hidden
+            form.expense-modal-form(action='')
+                h1 Please fill the order data
+                input#modal-expense-name.modal-input(type='text' name='modal-expense-name' placeholder='Enter Order Name' required='')
+                textarea#modal-expense-desc.modal-input(name='modal-expense-desc' cols='30' rows='4' placeholder='Enter Order Description' required='')
+                input#modal-expense-income.modal-input(type='number' name='modal-expense-income' placeholder='Enter the Income' required='')
+                input#modal-expense-date.modal-input(name='modal-expense-date' placeholder='Enter the Order Date' type='text' onfocus="(this.type='date')" onblur="(this.type='text')" required='')
+                .expense-modal-cta
+                    a.btn-modal.btn-modalexp--cancel(href='#') Close
+                    input.btn-modal.btn-modalexp--save(type='submit' value='Save')

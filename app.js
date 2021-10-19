@@ -2,10 +2,12 @@ const express = require('express');
 const morgan = require('morgan');
 const path = require('path');
 const cookieParser = require('cookie-parser');
+const compression = require('compression');
 
 const userRoute = require('./routes/userRoutes');
 const viewRoute = require('./routes/viewRoutes');
 const menuRoute = require('./routes/menuRoutes');
+const expenseRoute = require('./routes/expenseRoutes');
 const AppError = require('./utils/appError');
 const globalError = require('./controllers/errorController');
 
@@ -18,6 +20,8 @@ app.use(cookieParser());
 
 app.use(morgan('dev'));
 
+app.use(compression());
+
 //Serving Static Files
 app.set('view engine', 'pug');
 app.set('views', path.join(__dirname, 'views'));
@@ -26,6 +30,7 @@ app.use(express.static(`${__dirname}/public`));
 //API Routing
 app.use('/api/v1/users', userRoute);
 app.use('/api/v1/menu', menuRoute);
+app.use('/api/v1/expense', expenseRoute);
 //View Routing
 app.use('/', viewRoute);
 app.all('*', (req, res, next) => {

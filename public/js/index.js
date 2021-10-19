@@ -7,6 +7,9 @@ import {
   addMenu,
 } from './updateMenu';
 
+import { addExpense, renderExpenseModal, deleteExpense } from './expense';
+import { initExpenseItem } from './expenseItem';
+
 import { renderMenu, printMenu } from './printMenu';
 import { billInit } from './billMenu';
 
@@ -116,4 +119,53 @@ if (btnPrint) {
 const bill = document.querySelector('.bill-cta');
 if (bill) {
   billInit();
+}
+
+//****************************************************************** */
+//EXPESE INTERFACE
+//****************************************************************** */
+const addExpenseBtn = document.querySelector('.expense-cta');
+if (addExpenseBtn) {
+  addExpenseBtn.addEventListener('click', function (e) {
+    e.preventDefault();
+    renderExpenseModal();
+  });
+}
+
+const expenseModalClose = document.querySelector('.btn-modalexp--cancel');
+if (expenseModalClose) {
+  expenseModalClose.addEventListener('click', function (e) {
+    e.preventDefault();
+    renderExpenseModal();
+  });
+}
+
+const addExpenseForm = document.querySelector('.expense-modal-form');
+if (addExpenseForm) {
+  addExpenseForm.addEventListener('submit', function (e) {
+    e.preventDefault();
+    addExpense();
+  });
+}
+
+const expensesContainer = document.querySelector('.expenses');
+if (expensesContainer) {
+  expensesContainer.addEventListener('click', function (e) {
+    e.preventDefault();
+    if (e.target.classList.contains('expense-delete-icon')) {
+      deleteExpense(e.target.dataset.id);
+    } else {
+      const id = e.target.closest('.expense').dataset.id;
+      location.assign(`/expense/${id}`);
+    }
+  });
+}
+
+//****************************************************************** */
+//EXPESE ITEM INTERFACE
+//****************************************************************** */
+
+const expenseItemContainer = document.querySelector('.expense-item-wrapper');
+if (expenseItemContainer) {
+  initExpenseItem();
 }
