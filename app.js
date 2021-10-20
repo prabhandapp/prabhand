@@ -25,9 +25,6 @@ app.use(morgan('dev'));
 // Data sanitization against NoSQL query injection
 app.use(mongoSanitize());
 
-// Data sanitization against XSS
-app.use(xss());
-
 app.use(compression());
 
 //Serving Static Files
