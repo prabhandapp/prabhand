@@ -4,7 +4,6 @@ const path = require('path');
 const cookieParser = require('cookie-parser');
 const compression = require('compression');
 const mongoSanitize = require('express-mongo-sanitize');
-const xss = require('xss-clean');
 
 const userRoute = require('./routes/userRoutes');
 const viewRoute = require('./routes/viewRoutes');
