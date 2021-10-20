@@ -3,7 +3,6 @@ const morgan = require('morgan');
 const path = require('path');
 const cookieParser = require('cookie-parser');
 const compression = require('compression');
-const helmet = require('helmet');
 const mongoSanitize = require('express-mongo-sanitize');
 const xss = require('xss-clean');
 
@@ -16,8 +15,6 @@ const AppError = require('./utils/appError');
 const globalError = require('./controllers/errorController');
 
 const app = express();
-
-app.use(helmet());
 
 //Body Parser
 app.use(express.json());
