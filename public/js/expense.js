@@ -18,9 +18,10 @@ const addExpense = async () => {
   const orderDate = new Date(date);
   const month = orderDate.toLocaleString('default', { month: 'short' });
   const day = orderDate.getDate();
+  const balance = income;
 
   const url = `/api/v1/expense`;
-  const data = { name, description, income, orderDate, month, day };
+  const data = { name, description, income, orderDate, month, day, balance };
   try {
     const res = await axios({
       method: 'POST',
