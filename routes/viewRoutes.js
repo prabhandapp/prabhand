@@ -24,4 +24,6 @@ router.get(
   viewController.expenseItem
 );
 
+router.get('/feedback', viewController.feedback);
+
 module.exports = router;

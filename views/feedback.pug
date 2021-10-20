@@ -1,0 +1,21 @@
+extends base
+
+block content
+    .feedback-container
+        .feedback-wrapper
+            .feedback-header
+                .feeback-header-button.close
+                .feeback-header-button.maximize
+                .feeback-header-button.minimize
+            .feedback-content
+                form.feedback-form
+                    h1 FEEDBACK
+                    input#feedback-name.feedback-input(type='text' name='feedback-name' placeholder='NAME' required='')
+                    input#feedback-location.feedback-input(type='text' name='feedback-location' placeholder='PLACE')
+                    textarea#feedback-message.feedback-input(name='feedback-message' cols='30' rows='5' placeholder='MESSAGE' required='')
+                    .feedback-cta
+                        p CONTACT INFO : PRABANDH [9142268008]
+                        input.feedback-btn(type='submit' value='SEND')
+            .feedback-content-end
+                p THANKS FOR YOUR VALUABLE FEEDBACK
+                p HOPE TO SERVE YOU AGAIN !!!

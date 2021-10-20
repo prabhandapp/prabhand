@@ -1061,6 +1061,132 @@ header {
   margin-top: 1rem;
 }
 
+/************************************ FEEDBACK PAGE ********************************/
+.feedback-container {
+  width: 90%;
+  margin: auto;
+}
+
+.feedback-wrapper {
+  margin-top: 3rem;
+  overflow: hidden;
+}
+
+.feedback-header {
+  background-color: #4d4d4f;
+  padding: 1rem 2rem;
+  border-top-left-radius: 1.5rem;
+  border-top-right-radius: 1.5rem;
+}
+
+.feeback-header-button {
+  display: inline-block;
+  width: 0.8rem;
+  height: 0.8rem;
+  margin-right: 0.3rem;
+  border-radius: 50%;
+}
+
+.close {
+  background-color: #ed1c6f;
+}
+
+.maximize {
+  background-color: #e8e925;
+}
+
+.minimize {
+  background-color: #74c54f;
+}
+
+.feedback-form h1 {
+  font-size: 1.6rem;
+  color: #ed1c6f;
+  margin-bottom: 1rem;
+  letter-spacing: 1.2px;
+}
+
+.feedback-content,
+.feedback-content-end {
+  background-color: #3e3e3e;
+  padding: 3rem;
+  border-bottom-left-radius: 1.5rem;
+  border-bottom-right-radius: 1.5rem;
+  transition: all 2s ease-in-out;
+  height: 40rem;
+}
+
+.feedback-content-end {
+  transform: translateY(-1000px);
+}
+
+.feedback-content-end P {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.6rem;
+  letter-spacing: 1.2px;
+  color: #e8e925;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.feedback-input {
+  width: 100%;
+  padding: 1rem 0;
+  background: none;
+  border: none;
+  border-bottom: 1px solid #666;
+  font-size: 1.4rem;
+  outline: none;
+  text-transform: uppercase;
+  color: #ddd;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  /* font-family: "Roboto", sans-serif; */
+  font-family: 'Montserrat', sans-serif;
+}
+
+.feedback-cta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.feedback-cta p {
+  font-size: 0.8rem;
+  color: #ddd;
+  font-weight: 700;
+  letter-spacing: 1.4px;
+}
+
+.feedback-btn {
+  background-color: #ea1d6f;
+  border: none;
+  color: #ddd;
+  font-size: 14px;
+  cursor: pointer;
+  outline: none;
+  padding: 0.8rem 1.5rem;
+  border-radius: 1rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.feedback-content-slide {
+  transform: translateY(-500px);
+}
+
+.feedback-content-end-slide {
+  transform: translateY(-400px);
+}
+
+@media only screen and (min-width: 768px) {
+  .feedback-container {
+    display: flex;
+    justify-content: center;
+  }
+}
+
 /************************************ ERROR PAGE ********************************/
 .error-wrapper {
   margin-top: 2rem;

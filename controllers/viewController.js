@@ -42,3 +42,9 @@ exports.expenseItem = (req, res, next) => {
     title: 'Expense Item',
   });
 };
+
+exports.feedback = (req, res, next) => {
+  res.status(200).render('feedback', {
+    title: 'Feedback',
+  });
+};

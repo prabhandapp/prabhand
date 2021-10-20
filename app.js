@@ -3,15 +3,21 @@ const morgan = require('morgan');
 const path = require('path');
 const cookieParser = require('cookie-parser');
 const compression = require('compression');
+const helmet = require('helmet');
+const mongoSanitize = require('express-mongo-sanitize');
+const xss = require('xss-clean');
 
 const userRoute = require('./routes/userRoutes');
 const viewRoute = require('./routes/viewRoutes');
 const menuRoute = require('./routes/menuRoutes');
 const expenseRoute = require('./routes/expenseRoutes');
+const reviewRoute = require('./routes/reviewRoutes');
 const AppError = require('./utils/appError');
 const globalError = require('./controllers/errorController');
 
 const app = express();
+
+app.use(helmet());
 
 //Body Parser
 app.use(express.json());
@@ -19,6 +25,12 @@ app.use(express.json());
 app.use(cookieParser());
 
 app.use(morgan('dev'));
+
+// Data sanitization against NoSQL query injection
+app.use(mongoSanitize());
+
+// Data sanitization against XSS
+app.use(xss());
 
 app.use(compression());
 
@@ -31,6 +43,7 @@ app.use(express.static(`${__dirname}/public`));
 app.use('/api/v1/users', userRoute);
 app.use('/api/v1/menu', menuRoute);
 app.use('/api/v1/expense', expenseRoute);
+app.use('/api/v1/review', reviewRoute);
 //View Routing
 app.use('/', viewRoute);
 app.all('*', (req, res, next) => {

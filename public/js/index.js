@@ -9,6 +9,7 @@ import {
 
 import { addExpense, renderExpenseModal, deleteExpense } from './expense';
 import { initExpenseItem } from './expenseItem';
+import { send } from './feedback';
 
 import { renderMenu, printMenu } from './printMenu';
 import { billInit } from './billMenu';
@@ -168,4 +169,17 @@ if (expensesContainer) {
 const expenseItemContainer = document.querySelector('.expense-item-wrapper');
 if (expenseItemContainer) {
   initExpenseItem();
+}
+
+//****************************************************************** */
+//FEEDBACK form INTERFACE
+//****************************************************************** */
+
+const sendFeedBtn = document.querySelector('.feedback-btn');
+if (sendFeedBtn) {
+  sendFeedBtn.addEventListener('click', function (e) {
+    console.log('SEND');
+    e.preventDefault();
+    send();
+  });
 }
