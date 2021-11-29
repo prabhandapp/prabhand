@@ -1,0 +1,19 @@
+extends base
+
+block header 
+    include _header
+
+block content 
+    #loader.loader-hide
+    main
+        .post-container
+            each review in reviews
+                .post
+                    .feedback
+                        p
+                            i.fas.fa-quote-left
+                             span=review.message
+                            i.fas.fa-quote-right
+                    .post-info
+                        span=`${review.name} | ${review.place}`
+                        span=`${new Date(Number(review.reviewDate)).toDateString()}`

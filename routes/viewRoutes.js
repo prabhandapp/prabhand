@@ -3,6 +3,7 @@ const express = require('express');
 const viewController = require('../controllers/viewController');
 const authController = require('../controllers/authController');
 const expenseController = require('../controllers/expenseController');
+const reviewController = require('../controllers/reviewController');
 
 const router = express.Router();
 router.get('/login', viewController.getLoginForm);
@@ -25,5 +26,11 @@ router.get(
 );
 
 router.get('/feedback', viewController.feedback);
+router.get(
+  '/review',
+  authController.isLoggedIn,
+  reviewController.getReview,
+  viewController.review
+);
 
 module.exports = router;

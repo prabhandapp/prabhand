@@ -1234,6 +1234,53 @@ header {
   background-color: #eb4d4b;
 }
 
+/* ************************************ POST *********************************/
+
+.post-container {
+  width: 90%;
+  margin: auto;
+}
+.post {
+  margin-top: 1.5rem;
+  border: 3px solid rgb(240, 233, 233);
+  padding: 1rem;
+  border-radius: 2rem;
+}
+
+.feedback span {
+  font-size: 1.6rem;
+  font-weight: 700;
+  font-family: 'Lora', serif;
+  line-height: 1.5;
+}
+
+.post-info {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #3c3b3b;
+  text-transform: uppercase;
+  margin-top: 1rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.quote {
+  position: relative;
+  padding: 0 40px 0 50px;
+}
+.quote .fa-quote-left,
+.quote .fa-quote-right {
+  position: absolute;
+  top: 50%;
+  margin-top: -22px;
+}
+.quote .fa-quote-left {
+  left: 0px;
+}
+.quote .fa-quote-right {
+  right: 0px;
+}
+
 /* LOADER */
 #loader {
   position: fixed;

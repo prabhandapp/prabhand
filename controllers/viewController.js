@@ -48,3 +48,9 @@ exports.feedback = (req, res, next) => {
     title: 'Feedback',
   });
 };
+
+exports.review = (req, res, next) => {
+  res.status(200).render('review', {
+    title: 'User Review',
+  });
+};
